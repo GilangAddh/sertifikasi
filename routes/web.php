@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 Route::get('/mahasiswa/tambah', [MahasiswaController::class, 'tambahMhKRS'])->name('tambahMhKRS');
 Route::post('/mahasiswa/store', [MahasiswaController::class, 'store'])->name('store');
+Route::get('/mahasiswa/edit/{id}}', [MahasiswaController::class, 'edit'])->name('edit');
+Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update'])->name('update');
+Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('destroy');

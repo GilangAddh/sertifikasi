@@ -10,6 +10,7 @@ class MataKuliah extends Model
     use HasFactory;
 
     protected $table = 'detail_krs';
+    public $timestamps = false;
 
     protected $fillable = [
         'id_krs',

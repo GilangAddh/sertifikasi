@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class KRS extends Model
 {
     protected $table = 'krs';
+    public $timestamps = false;
 
     protected $fillable = [
         'semester',

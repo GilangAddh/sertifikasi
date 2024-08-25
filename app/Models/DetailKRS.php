@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DetailKRS extends Model
 {
     protected $table = 'mata_kuliah';
+    public $timestamps = false;
 
     protected $fillable = [
         'kode',

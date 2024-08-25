@@ -19,7 +19,11 @@
         </div>
         <div>
             <label for="program_studi">Program Studi:</label>
-            <input type="text" id="program_studi" name="program_studi" required>
+            <select id="id_ps" name="id_ps" required>
+                <option value="1">Teknik Informatika</option>
+                <option value="2">Teknik Jaringan</option>
+                <option value="3">Teknik Multimedia</option>
+            </select>
         </div>
         <div>
             <label for="semester">Semester:</label>

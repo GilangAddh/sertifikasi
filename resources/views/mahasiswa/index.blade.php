@@ -22,6 +22,7 @@
                         <th>Nama</th>
                         <th>NPM</th>
                         <th>Program Studi</th>
+                        <th colspan="2">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +31,17 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $item->nama }}</td>
                             <td>{{ $item->npm }}</td>
-                            <td>{{ $item->program_studi }}</td>
+                            <td>{{ $item->programStudi->nama }}</td>
+                            <td><a href="{{ route('edit', ['id' => $item->id]) }}">Edit</a></td>
+                            <td>
+                                <form action="{{ route('destroy', ['id' => $item->id]) }}" method="POST"
+                                    style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -73,5 +84,12 @@
         <a href="{{ route('tambahMhKRS') }}">Tambah Mahasiswa Berserta KRS nya</a>
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        @if (session('error'))
+            alert('{{ session('error') }}');
+        @endif
+    });
+</script>
 
 </html>
